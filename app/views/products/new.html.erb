@@ -1,1 +1,10 @@
 <h1> Its like some new stuff herre</h1>
+
+<h3>Add a New Product</h3>
+<%= form_for @product do |f| %>
+  <%= f.label :name, 'Product Name' %>:
+  <%= f.text_field :name %><br />
+  <%= f.label :brand, 'Brand' %>:
+  <%= f.text_field :brand %><br />
+  <%= f.submit %>
+<% end %>
