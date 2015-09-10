@@ -2,6 +2,7 @@
 <%= link_to 'New Product', new_product_path %>
 
 <% @products.each do |product| %>
-  <%=product.name%>
-  <%=product.brand%>
+  <p>Brand: <%=product.brand%></p>
+  <p>Name: <%=product.name%></p>
+  <%= link_to 'Product', product_path(product.id)%>
 <% end %>
