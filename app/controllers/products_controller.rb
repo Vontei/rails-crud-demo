@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 
 
   def create
-    @product = Product.new(post_params)
+    @product = Product.new(product_params)
     if @product.save
       redirect_to products_path
     else
@@ -26,14 +26,23 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.patch(params[:id])
+    @product = Product.find(params[:id])
+    @product.update(product_params)
     if @product.save
       redirect_to products_path
+    else
+      render :edit
     end
+
   end
 
-  def post_params
+  def product_params
     params.require(:product).permit(:name, :brand)
+  end
+
+  def destroy
+    @product = Product.find(params[:id]).destroy
+    redirect_to products_path
   end
 
 
