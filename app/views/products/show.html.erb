@@ -4,3 +4,4 @@
 <h3>Name:  <%= @product.name %></h3>
 <%= link_to 'Edit Product', edit_product_path(@product.id)%>
 <%= link_to "Delete Product", product_path(@product), method: :delete %>
+<%= link_to "Add Review", new_product_comment_path(@product) %>

@@ -1,0 +1,5 @@
+<h1> Add a comment </h1>
+<%= form_for [@product, @comment] do |f| %>
+<%= f.label :comment %>
+<%= f.text_area :comment %>
+<% end %>
